@@ -1,0 +1,48 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\Hp\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add react-router-dom
+
+PATH: 
+  C:\Python310\Scripts\;C:\Python310\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\CodeBlocks\MinGW\bin;C:\Program Files\Git\cmd;C:\Users\Hp\AppData\Local\Microsoft\WindowsApps;C:\Users\Hp\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Hp\AppData\Roaming\npm;C:\Program Files\nodejs;C:\Program Files\MongoDB\Server\5.0\bin;
+
+Yarn version: 
+  1.22.17
+
+Node version: 
+  17.3.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: EPERM: operation not permitted, unlink 'G:\js\facebookclone\node_modules\bcrypt\lib\binding\napi-v3\bcrypt_lib.node'
+
+npm manifest: 
+  {
+    "name": "facebookclone",
+    "version": "1.0.0",
+    "description": "full facebook site",
+    "main": "server.js",
+    "scripts": {
+      "start": "node backend/index.js",
+      "dev": "SET NODE_ENV=DEVELOPMENT& nodemon backend/index",
+      "prod": "SET NODE_ENV=PRODUCTION& nodemon backend/index"
+    },
+    "dependencies": {
+      "bcrypt": "^5.0.1",
+      "dotenv": "^16.0.1",
+      "express": "^4.18.1",
+      "express-session": "^1.17.3",
+      "helmet": "^5.1.0",
+      "mongoose": "^6.3.5",
+      "morgan": "^1.10.0",
+      "nodemon": "^2.0.16",
+      "passport": "^0.6.0",
+      "react-router-dom": "^6.3.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

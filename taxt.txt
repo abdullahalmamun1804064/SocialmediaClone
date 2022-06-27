@@ -1,0 +1,12 @@
+npm i express mongoose dotenv helmet morgan nodemon bcrypt express-session 
+
+npm create-react-app
+
+yarn add react-router-dom
+
+yarn add @material-ui/core
+
+yarn add @material-ui/icons
+
+yarn add @mui/material @emotion/react @emotion/styled
+
