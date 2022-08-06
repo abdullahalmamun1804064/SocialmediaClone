@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const jwt = require("jsonwebtoken");
 
-const UserSchema = new mongoose.Schema(
+const userSchema = new mongoose.Schema(
   {
     username: {
       type: String,
@@ -59,5 +60,11 @@ const UserSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
+//Retuen jwt token
+userSchema.methods.getJwtToken = function () {
+  return jwt.sign({ id: this._id }, process.env.JWT_SECRET, {
+    expiresIn:process.env.JWT_EXPIRES_TIME
+  });
+}
 
-module.exports = mongoose.model("User", UserSchema);
+module.exports = mongoose.model("User", userSchema);

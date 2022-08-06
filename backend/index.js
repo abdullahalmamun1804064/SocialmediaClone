@@ -7,6 +7,7 @@ const helmet = require("helmet");
 const morgan = require("morgan");
 const session = require("express-session");
 const passport = require('passport');
+const cookieParser=require('cookie-parser')
 
 const userRouter = require('./routes/users');
 const userAuth = require('./routes/auth');
@@ -36,6 +37,7 @@ mongoose.connect(process.env.DB_LOCAL_URI, { useNewUrlParser: true }, () => {
 //middleware
 app.use(express.json());
 app.use(helmet());
+app.use(cookieParser());
 app.use(morgan("comma"));
 
 // Authentication configuration

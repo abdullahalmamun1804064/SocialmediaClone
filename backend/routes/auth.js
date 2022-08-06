@@ -1,5 +1,6 @@
 const express = require("express");
 const bcrypt = require("bcrypt");
+const sendToken = require("../utils/jwtToken")
 
 const router = express.Router();
 const User = require("../models/User");
@@ -51,12 +52,25 @@ router.post(
       res.status(404).send("Wrong Password");
       return;
     }
+  
 
-    res.status(200).json({
-      success: true,
-      user,
-    });
+    sendToken(user, 200, res);
+    
   }),
 );
+
+
+//logOut-> /api/v1/logout
+router.get(
+  "/logout",catchAsyncError(async (req, res, next) => {
+  res.cookie("token", null, {
+    expires: new Date(Date.now()),
+    httpOnly: true,
+  });
+  res.status(200).json({
+    success: true,
+    message: "Logged Out",
+  });
+}));
 
 module.exports = router;
